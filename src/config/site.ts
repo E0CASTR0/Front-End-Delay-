@@ -14,6 +14,8 @@ export const SITE = {
   description:
     "Conheça o Métodos Delay Pro, um guia digital para entender o conceito de Delay no futebol, estudar o mercado esportivo e desenvolver uma rotina mais organizada de análise.",
   locale: "pt_BR",
+  // E-mail de contato/suporte — placeholder. Troque pelo canal oficial da equipe.
+  supportEmail: "contato@metodosdelaypro.com.br",
 } as const;
 
 export const NAV_LINKS = [

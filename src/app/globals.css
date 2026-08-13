@@ -55,7 +55,7 @@
   --animate-float-slow: float 9s ease-in-out infinite;
   --animate-glow-pulse: glow-pulse 3.2s ease-in-out infinite;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-  --animate-drift: drift 18s linear infinite;
+  --animate-drift: drift 18s ease-in-out infinite alternate;
   --animate-shine: shine 2.6s ease-in-out infinite;
   --animate-marquee: marquee 32s linear infinite;
 }
@@ -132,6 +132,7 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    scrollbar-gutter: stable;
   }
 
   body {
@@ -218,13 +219,6 @@
 }
 
 @utility bg-noise {
-  position: relative;
-}
-
-@utility bg-noise::before {
-  content: "";
-  position: absolute;
-  inset: 0;
   pointer-events: none;
   opacity: 0.05;
   mix-blend-mode: overlay;
@@ -253,10 +247,10 @@
 @utility scrollbar-none {
   scrollbar-width: none;
   -ms-overflow-style: none;
-}
 
-@utility scrollbar-none::-webkit-scrollbar {
-  display: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @utility bg-grain-card {
