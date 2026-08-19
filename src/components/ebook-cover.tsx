@@ -88,7 +88,7 @@ export function EbookCover({
             </div>
 
             <div className="relative z-10 flex items-center justify-center py-3 sm:py-4">
-              <StopwatchIcon className="h-16 w-16 text-neon-400/90 sm:h-24 sm:w-24" />
+              <CoverEmblem className="aspect-[6/5] w-[130px] text-neon-400/90 sm:w-[190px]" />
             </div>
 
             <div className="relative z-10 grid grid-cols-3 gap-2 border-t border-neon-900/70 pt-3 text-center sm:pt-4">
@@ -108,17 +108,44 @@ export function EbookCover({
   );
 }
 
-function StopwatchIcon({ className }: { className?: string }) {
+/**
+ * Bola de futebol (com o padrão de pentágonos girando lentamente) +
+ * linhas de movimento + um pequeno selo de cronômetro dourado no
+ * canto — a ideia de "Delay" (tempo) continua presente, mas como um
+ * detalhe, não como a imagem inteira.
+ */
+function CoverEmblem({ className }: { className?: string }) {
   return (
-    <svg viewBox="0 0 100 100" fill="none" className={className} aria-hidden="true">
-      <circle cx="50" cy="54" r="34" stroke="currentColor" strokeWidth="3" opacity="0.9" />
-      <circle cx="50" cy="54" r="34" stroke="currentColor" strokeWidth="3" strokeDasharray="14 10" opacity="0.3" />
-      <line x1="50" y1="54" x2="50" y2="33" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-      <line x1="50" y1="54" x2="63" y2="60" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-      <circle cx="50" cy="54" r="3" fill="currentColor" />
-      <line x1="41" y1="10" x2="59" y2="10" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <line x1="50" y1="10" x2="50" y2="18" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
-      <line x1="74" y1="19" x2="80" y2="13" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+    <svg viewBox="0 0 120 100" fill="none" className={className} aria-hidden="true">
+      {/* linhas de movimento */}
+      <path d="M4,36 Q18,33 32,38" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" opacity="0.5" />
+      <path d="M2,54 Q16,52 30,55" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.65" />
+      <path d="M4,72 Q18,74 32,69" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
+
+      {/* bola de futebol */}
+      <circle cx="60" cy="54" r="32" stroke="currentColor" strokeWidth="3" />
+      <g className="animate-ball-spin" style={{ transformOrigin: "60px 54px" }}>
+        <path
+          d="M60,41.2 L72.2,50 L67.5,64.4 L52.5,64.4 L47.8,50 Z"
+          fill="currentColor"
+          className="text-gold-400"
+        />
+        <path
+          d="M60,41.2 L60,22 M72.2,50 L90.4,44.1 M67.5,64.4 L78.8,79.9 M52.5,64.4 L41.2,79.9 M47.8,50 L29.6,44.1"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          opacity="0.85"
+        />
+      </g>
+
+      {/* selo de cronômetro */}
+      <circle cx="96" cy="22" r="15" fill="#050604" stroke="currentColor" strokeWidth="2" className="text-gold-400" />
+      <line x1="92" y1="8" x2="100" y2="8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-gold-400" />
+      <line x1="96" y1="8" x2="96" y2="11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-gold-400" />
+      <line x1="96" y1="22" x2="96" y2="13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-gold-300" />
+      <line x1="96" y1="22" x2="103" y2="26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-gold-300" />
+      <circle cx="96" cy="22" r="1.6" fill="currentColor" className="text-gold-300" />
     </svg>
   );
 }
