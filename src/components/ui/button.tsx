@@ -18,7 +18,7 @@ export interface ButtonProps {
 }
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full font-display font-extrabold uppercase tracking-wide transition-all duration-300 ease-out focus-visible:outline-none";
+  "group relative inline-flex items-center justify-center gap-2.5 overflow-hidden whitespace-nowrap rounded-full font-display font-extrabold uppercase tracking-wide transition-all duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] focus-visible:outline-none active:scale-[0.97]";
 
 const variants: Record<Variant, string> = {
   primary:

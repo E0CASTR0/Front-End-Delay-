@@ -1,10 +1,8 @@
 # /public/images
 
-Pasta para imagens gerais da página (ex: fotos de depoimentos reais).
+Pasta para imagens gerais da página (a seção de depoimentos foi removida;
+use esta pasta para outras imagens gerais que a página venha a precisar).
 
-- Depoimentos: salve as fotos em `public/images/depoimentos/` e
-  referencie o caminho (`/images/depoimentos/nome.webp`) no campo
-  `photo` de `src/config/testimonials.ts`.
-- Prefira `.webp` para melhor performance. Imagens aqui são servidas
-  como arquivos estáticos e otimizadas automaticamente pelo
-  `next/image` quando usadas através dele.
+Prefira `.webp` para melhor performance. Imagens aqui são servidas como
+arquivos estáticos e otimizadas automaticamente pelo `next/image` quando
+usadas através dele.

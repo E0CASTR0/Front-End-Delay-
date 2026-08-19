@@ -18,7 +18,7 @@ export default async function OgImage() {
           alignItems: "center",
           backgroundColor: "#050604",
           backgroundImage:
-            "radial-gradient(circle at 18% 0%, rgba(43,255,119,0.28), transparent 60%), radial-gradient(circle at 85% 100%, rgba(43,255,119,0.14), transparent 55%)",
+            "radial-gradient(circle at 18% 0%, rgba(43,255,119,0.28), transparent 60%), radial-gradient(circle at 88% 6%, rgba(224,175,65,0.22), transparent 55%)",
         }}
       >
         <div
@@ -26,7 +26,7 @@ export default async function OgImage() {
             display: "flex",
             fontSize: 24,
             letterSpacing: 6,
-            color: "#2bff77",
+            color: "#e0af41",
             fontWeight: 700,
             textTransform: "uppercase",
             marginBottom: 26,

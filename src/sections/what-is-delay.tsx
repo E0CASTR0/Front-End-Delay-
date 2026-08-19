@@ -5,8 +5,12 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function WhatIsDelay() {
   return (
-    <section id="o-metodo" className="relative py-24 sm:py-28">
-      <Container>
+    <section id="o-metodo" className="relative overflow-hidden py-24 sm:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_45%_at_50%_0%,rgba(43,255,119,0.07),transparent_65%)]"
+      />
+      <Container className="relative">
         <SectionHeading
           eyebrow="O Conceito"
           title={

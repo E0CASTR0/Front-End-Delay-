@@ -10,8 +10,12 @@ export function Differentials() {
   const [firstRow, secondRow] = [DIFFERENTIALS.slice(0, 3), DIFFERENTIALS.slice(3)];
 
   return (
-    <section id="diferenciais" className="relative py-24 sm:py-28">
-      <Container>
+    <section id="diferenciais" className="relative overflow-hidden py-24 sm:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(50%_45%_at_50%_100%,rgba(43,255,119,0.06),transparent_65%)]"
+      />
+      <Container className="relative">
         <SectionHeading eyebrow="Diferenciais" title="POR QUE O MÉTODOS DELAY PRO?" />
 
         <div className="mt-14 space-y-6 sm:mt-16">

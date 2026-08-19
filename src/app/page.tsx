@@ -6,7 +6,6 @@ import { EbookContents } from "@/sections/ebook-contents";
 import { ProductShowcase } from "@/sections/product-showcase";
 import { ForWho } from "@/sections/for-who";
 import { Differentials } from "@/sections/differentials";
-import { SocialProof } from "@/sections/social-proof";
 import { Bonus } from "@/sections/bonus";
 import { Offer } from "@/sections/offer";
 import { Faq } from "@/sections/faq";
@@ -23,7 +22,6 @@ export default function Home() {
       <ProductShowcase />
       <ForWho />
       <Differentials />
-      <SocialProof />
       <Bonus />
       <Offer />
       <Faq />

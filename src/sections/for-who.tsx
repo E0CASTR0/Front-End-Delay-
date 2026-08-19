@@ -7,8 +7,12 @@ import { Reveal } from "@/components/ui/reveal";
 
 export function ForWho() {
   return (
-    <section id="para-quem" className="relative py-24 sm:py-28">
-      <Container>
+    <section id="para-quem" className="relative overflow-hidden py-24 sm:py-28">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(45%_40%_at_15%_100%,rgba(224,175,65,0.06),transparent_60%)]"
+      />
+      <Container className="relative">
         <SectionHeading eyebrow="Público" title="PARA QUEM É O MÉTODOS DELAY PRO?" />
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">

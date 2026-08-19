@@ -108,12 +108,11 @@ src/
 ├── sections/                 # Uma seção da landing page por arquivo
 │   ├── hero.tsx, benefits-bar.tsx, what-is-delay.tsx, how-it-works.tsx
 │   ├── ebook-contents.tsx, product-showcase.tsx, for-who.tsx, differentials.tsx
-│   ├── social-proof.tsx, bonus.tsx, offer.tsx, faq.tsx, final-cta.tsx
+│   ├── bonus.tsx, offer.tsx, faq.tsx, final-cta.tsx
 ├── config/                   # Toda a configuração/copy estruturada
 │   ├── checkout.ts           # CHECKOUT_URL + preço
 │   ├── site.ts                # Nome do produto, nav, links do footer, avisos
-│   ├── content.ts             # Textos dos cards (benefícios, FAQ, bônus, etc.)
-│   └── testimonials.ts        # Depoimentos reais (vazio por padrão — ver abaixo)
+│   └── content.ts             # Textos dos cards (benefícios, FAQ, bônus, etc.)
 └── lib/
     ├── utils.ts               # helper `cn` (merge de classes Tailwind)
     └── icons.tsx               # registro de ícones (lucide-react) por chave
@@ -131,7 +130,6 @@ public/
 | Link de checkout / preço                     | `src/config/checkout.ts`                   |
 | Nome do produto, links do menu, footer, avisos | `src/config/site.ts`                     |
 | Textos dos cards (benefícios, "o que vem no e-book", "para quem é", diferenciais, bônus, FAQ) | `src/config/content.ts` |
-| Depoimentos reais                            | `src/config/testimonials.ts` (array vazio — adicione objetos `{ name, quote, date, photo? }`; a seção troca automaticamente do estado "em breve" para os cards reais) |
 | Logo                                         | `public/logo/` + `src/components/logo.tsx` |
 | Capa do e-book                               | `public/ebook/` + `src/components/ebook-cover.tsx` |
 | Textos únicos do Hero / Oferta / CTA final   | dentro do respectivo arquivo em `src/sections/` |

@@ -12,11 +12,11 @@ export const CHECKOUT_URL = "https://pay.cakto.com.br/33vd8iy_1029401";
 
 /** Preço vigente do produto — usado na Oferta, no CTA fixo mobile e no SEO. */
 export const PRICE = {
-  current: "R$ 37,90",
+  current: "R$ 19,90",
   previous: "R$ 47,90",
   currency: "BRL",
   /** Valor numérico puro, usado em metadados estruturados (SEO). */
-  currentValue: 37.9,
+  currentValue: 19.9,
   previousValue: 47.9,
   paymentLabel: "PAGAMENTO ÚNICO",
 } as const;
