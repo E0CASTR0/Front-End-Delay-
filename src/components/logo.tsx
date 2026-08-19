@@ -10,8 +10,8 @@ import { SITE } from "@/config/site";
  * rosto do ator Al Pacino e uma composição com o nome "El Chapo"
  * (Joaquín Guzmán, uma pessoa real) — usar o rosto de um ator real ou
  * a identidade de um criminoso real como marca comercial não é algo
- * que este site pode publicar. Este emblema (crista + bola de futebol)
- * busca a mesma sensação de marca própria pedida, sem esse problema.
+ * que este site pode publicar. Este emblema (crista + coroa dourada)
+ * busca a mesma sensação de "donos/realeza" pedida, sem esse problema.
  *
  * Placeholder facilmente substituível: para usar a logo definitiva da
  * equipe, troque o conteúdo de `LogoMark` por um
@@ -20,20 +20,13 @@ import { SITE } from "@/config/site";
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 48 54" fill="none" className={className} aria-hidden="true">
-      {/* bola de futebol */}
-      <circle cx="24" cy="9" r="8" stroke="currentColor" strokeWidth="1.6" className="text-neon-500" />
+      {/* coroa dourada */}
       <path
-        d="M24,5.8 L27,8 L25.9,11.6 L22.1,11.6 L21,8 Z"
+        d="M13,10 L13,5 L19,9 L24,2 L29,9 L35,5 L35,10 Z"
         fill="currentColor"
         className="text-gold-400"
       />
-      <path
-        d="M24,5.8 L24,1 M27,8 L31.6,6.5 M25.9,11.6 L28.7,15.5 M22.1,11.6 L19.3,15.5 M21,8 L16.4,6.5"
-        stroke="currentColor"
-        strokeWidth="1"
-        strokeLinecap="round"
-        className="text-neon-600"
-      />
+      <rect x="13" y="9.5" width="22" height="3" rx="1" fill="currentColor" className="text-gold-500" />
 
       {/* crista / emblema */}
       <path

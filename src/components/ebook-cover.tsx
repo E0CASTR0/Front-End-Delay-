@@ -109,34 +109,57 @@ export function EbookCover({
 }
 
 /**
- * Bola de futebol (com o padrão de pentágonos girando lentamente) +
- * linhas de movimento + um pequeno selo de cronômetro dourado no
- * canto — a ideia de "Delay" (tempo) continua presente, mas como um
+ * Bola de futebol — pentágono central + seis "gomos" ao redor (o
+ * mesmo princípio da bola clássica: pentágonos + hexágonos, pesquisado
+ * como referência real antes de desenhar), sombra e brilho simulando
+ * volume de esfera, padrão girando bem devagar. Linhas de movimento +
+ * selo de cronômetro dourado no canto mantêm a ideia de "Delay" como
  * detalhe, não como a imagem inteira.
  */
 function CoverEmblem({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 120 100" fill="none" className={className} aria-hidden="true">
+      <defs>
+        <clipPath id="ball-clip">
+          <circle cx="60" cy="54" r="32" />
+        </clipPath>
+      </defs>
+
       {/* linhas de movimento */}
       <path d="M4,36 Q18,33 32,38" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" opacity="0.5" />
       <path d="M2,54 Q16,52 30,55" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.65" />
       <path d="M4,72 Q18,74 32,69" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
 
-      {/* bola de futebol */}
-      <circle cx="60" cy="54" r="32" stroke="currentColor" strokeWidth="3" />
+      {/* bola de futebol — esfera base */}
+      <circle cx="60" cy="54" r="32" fill="#0a2c19" stroke="currentColor" strokeWidth="2.5" />
+
+      {/* padrão (pentágono central + 5 gomos hexagonais ao redor), girando devagar */}
       <g className="animate-ball-spin" style={{ transformOrigin: "60px 54px" }}>
+        <path
+          d="M60,41.2 L60,27 L85.7,45.7 L72.2,50 Z
+             M72.2,50 L85.7,45.7 L75.9,75.8 L67.5,64.4 Z
+             M67.5,64.4 L75.9,75.8 L44.1,75.8 L52.5,64.4 Z
+             M52.5,64.4 L44.1,75.8 L34.3,45.7 L47.8,50 Z
+             M47.8,50 L34.3,45.7 L60,27 L60,41.2 Z"
+          fill="#04140b"
+          stroke="currentColor"
+          className="text-neon-500"
+          strokeWidth="1.2"
+        />
         <path
           d="M60,41.2 L72.2,50 L67.5,64.4 L52.5,64.4 L47.8,50 Z"
           fill="currentColor"
           className="text-gold-400"
+          stroke="#8a6a1f"
+          strokeWidth="0.6"
         />
-        <path
-          d="M60,41.2 L60,22 M72.2,50 L90.4,44.1 M67.5,64.4 L78.8,79.9 M52.5,64.4 L41.2,79.9 M47.8,50 L29.6,44.1"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          opacity="0.85"
-        />
+      </g>
+
+      {/* brilho e sombra fixos (luz não gira junto com o padrão) */}
+      <g clipPath="url(#ball-clip)">
+        <ellipse cx="74" cy="71" rx="17" ry="14" fill="black" opacity="0.28" />
+        <ellipse cx="46" cy="37" rx="15" ry="10" fill="white" opacity="0.15" transform="rotate(-25 46 37)" />
+        <ellipse cx="43" cy="34" rx="6" ry="4" fill="white" opacity="0.3" transform="rotate(-25 43 34)" />
       </g>
 
       {/* selo de cronômetro */}
